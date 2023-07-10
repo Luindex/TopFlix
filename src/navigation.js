@@ -1,5 +1,4 @@
 searchFormBtn.addEventListener("click", () => {
-  searchFormInput.value
   location.hash = "#search=" + searchFormInput.value
 })
 
@@ -9,7 +8,7 @@ trendingBtn.addEventListener("click", () => {
 
 arrowBtn.addEventListener("click", () => {
   history.back()
-  location.hash = "#home"
+  //location.hash = "#home"
 })
 
 window.addEventListener("DOMContentLoaded", navigator, false)
@@ -94,6 +93,10 @@ function movieDetailsPage() {
   categoriesPreviewSection.classList.add("inactive")
   genericSection.classList.add("inactive")
   movieDetailSection.classList.remove("inactive")
+
+  // ['movie', "1234"]
+  const [_, movieId] = location.hash.split("=")
+  getMovieByid(movieId)
 }
 
 function searchPage() {
